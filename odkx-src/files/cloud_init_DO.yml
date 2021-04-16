@@ -21,7 +21,7 @@ write_files:
     content: |
       #!/bin/sh
       docker swarm init --advertise-addr $(curl ipecho.net/plain)
-      git clone https://github.com/odk-x/sync-endpoint-default-setup.git
+      git clone -b master --single-branch --depth=1 https://github.com/odk-x/sync-endpoint-default-setup.git
       cd sync-endpoint-default-setup
       python3 init-odkx-sync-endpoint.py
 
